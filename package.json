@@ -1,7 +1,7 @@
 {
-  "name": "svg-loader",
-  "version": "0.0.2",
-  "author": "Andrei Terentev @dolbyzerr",
+  "name": "@eramdam/svg-loader",
+  "version": "0.0.3",
+  "author": "Damien Erambert @eramdam",
   "description": "Svg loader for webpack",
   "licenses": [
     {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:dolbyzerr/svg-loader.git"
+    "url": "git@github.com:eramdam/svg-loader.git"
   },
   "keywords": [
     "svg",
@@ -23,7 +23,10 @@
     "webpack"
   ],
   "bugs": {
-    "url": "https://github.com/dolbyzerr/svg-loader/issues"
+    "url": "https://github.com/eramdam/svg-loader/issues"
   },
-  "homepage": "https://github.com/dolbyzerr/svg-loader"
+  "homepage": "https://github.com/eramdam/svg-loader",
+  "dependencies": {
+    "loader-utils": "^1.1.0"
+  }
 }

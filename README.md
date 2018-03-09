@@ -4,6 +4,10 @@ Webpack loader that inlines SVG content so that you can control and alter it.
 Unlike SVG inserted as an image, svg-loader allows to animate, change color,
 control size, etc.
 
+# Notice
+
+This is a fork of [svg-loader](https://github.com/dolbyzerr/svg-loader) to add some useful options.
+
 ## Installation
 
 ```bash
@@ -18,9 +22,23 @@ yarn add --dev svg-loader
 // ...
 {
   test: /\.svg$/,
-  loader: 'svg' // 👈 Add loader
+  use: ['svg-loader'] // 👈 Add loader
 },
 // ...
+
+// with options
+{
+  test: /\.svg$/,
+  use: [{
+    loader: 'svg-loader',
+    options: {
+      transformAttributes: function (attributes) {
+        // do your transform
+        return attributes;
+      }
+    }
+  }] // 👈 Add loader
+},
 ```
 
 ## Usage

@@ -1,5 +1,8 @@
+var loaderUtils = require("loader-utils");
+
 module.exports = function(content) {
-	this.cacheable && this.cacheable();
+  this.cacheable && this.cacheable();
+  var options = loaderUtils.getOptions(this);
 
   var match = content.match(/<svg([^>]+)+>([\s\S]+)<\/svg>/i);
   var attrs = {};
@@ -25,6 +28,10 @@ module.exports = function(content) {
 
   content = content.replace(/\n/g, ' ').trim();
   this.value = content;
+
+  if (typeof options.transformAttributes === 'function') {
+    var attrs = options.transformAttributes(attrs);
+  }
 
 	return "module.exports = " + JSON.stringify({attributes: attrs, content: content});
 }
