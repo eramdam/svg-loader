@@ -1,5 +1,5 @@
 {
-  "name": "@eramdam/svg-loader",
+  "name": "fork-svg-loader",
   "version": "0.0.3",
   "author": "Damien Erambert @eramdam",
   "description": "Svg loader for webpack",
