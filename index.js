@@ -29,7 +29,7 @@ module.exports = function(content) {
   content = content.replace(/\n/g, ' ').trim();
   this.value = content;
 
-  if (typeof options.transformAttributes === 'function') {
+  if (typeof options === 'object' && typeof options.transformAttributes === 'function') {
     var attrs = options.transformAttributes(attrs);
   }
 
